@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ItemDrag : MonoBehaviour
 {
+    public delegate void DragEnded(ItemDrag draggableObj);
+
+    public DragEnded dragEndedCallBack;
+
     bool isDragging = false;
     Vector3 mouseDragStartPos;
     Vector3 spriteDragStartPos;
@@ -12,7 +16,6 @@ public class ItemDrag : MonoBehaviour
     private void OnMouseDown()
     {
         isDragging = true;
-        print("isDragging");
         mouseDragStartPos = Camera.main.ScreenToWorldPoint(Input.mousePosition); //get mouse position in camera 
         spriteDragStartPos = transform.localPosition;
     }
@@ -22,14 +25,13 @@ public class ItemDrag : MonoBehaviour
         if (isDragging)
         {
             transform.localPosition = spriteDragStartPos + (Camera.main.ScreenToWorldPoint(Input.mousePosition) - mouseDragStartPos);
-            print("moving");
         }
     }
 
     private void OnMouseUp()
     {
         isDragging = false;
-        print("stopDragging");
+        dragEndedCallBack(this);
     }
 
 }
