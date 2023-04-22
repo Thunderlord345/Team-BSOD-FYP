@@ -4,47 +4,32 @@ using UnityEngine;
 
 public class ItemDrag : MonoBehaviour
 {
-
-    Vector3 offset;
     bool isDragging = false;
-
-
-    private void Update()
-    {
-        if (isDragging)
-        {
-            OnMouseDrag();
-        }
-    }
+    Vector3 mouseDragStartPos;
+    Vector3 spriteDragStartPos;
 
 
     private void OnMouseDown()
     {
-        if (Input.GetMouseButton(0))
-        {
-            offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
-        }
-       
         isDragging = true;
-        print("mousedown");
+        print("isDragging");
+        mouseDragStartPos = Camera.main.ScreenToWorldPoint(Input.mousePosition); //get mouse position in camera 
+        spriteDragStartPos = transform.localPosition;
     }
 
     private void OnMouseDrag()
     {
-        if (Input.GetMouseButton(0))
+        if (isDragging)
         {
-            Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f);
-            Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
-            transform.position = new Vector3(curPosition.x, curPosition.y, transform.position.z); //setting the item to cursor position 
-            print("mousedrag");
-
+            transform.localPosition = spriteDragStartPos + (Camera.main.ScreenToWorldPoint(Input.mousePosition) - mouseDragStartPos);
+            print("moving");
         }
-        
     }
 
     private void OnMouseUp()
     {
         isDragging = false;
+        print("stopDragging");
     }
 
 }
