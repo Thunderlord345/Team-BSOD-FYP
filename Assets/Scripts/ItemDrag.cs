@@ -9,6 +9,15 @@ public class ItemDrag : MonoBehaviour
     bool isDragging = false;
 
 
+    private void Update()
+    {
+        if (isDragging)
+        {
+            OnMouseDrag();
+        }
+    }
+
+
     private void OnMouseDown()
     {
         if (Input.GetMouseButton(0))
