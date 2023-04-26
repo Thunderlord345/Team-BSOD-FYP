@@ -6,6 +6,7 @@ public class MixingMiniGame : MonoBehaviour
 {
 
     bool Pause = false;
+    public Animator animator;
 
     [Header("Pot")]
     [SerializeField] Transform topPivot;
@@ -42,6 +43,7 @@ public class MixingMiniGame : MonoBehaviour
 
     private void Start()
     {
+        animator = FindObjectOfType<Animator>();
         Resize();
     }
 
@@ -74,16 +76,16 @@ public class MixingMiniGame : MonoBehaviour
 
         hookPosition += hookPullVelocity;
 
-        if (hookPosition - mixHookSize/3 <= 0f && hookPullVelocity < 0f) //Prevent weird delay of hook not rising after going back down
+        if (hookPosition - mixHookSize / 3 <= 0f && hookPullVelocity < 0f) //Prevent weird delay of hook not rising after going back down
         {
             hookPullVelocity = 0f;
         }
 
-        if (hookPosition + mixHookSize/3 >= 1f && hookPullVelocity > 0f) //Prevent weird delay of hook not rising after going back down or back up
+        if (hookPosition + mixHookSize / 3 >= 1f && hookPullVelocity > 0f) //Prevent weird delay of hook not rising after going back down or back up
         {
             hookPullVelocity = 0f;
         }
-        hookPosition = Mathf.Clamp(hookPosition, mixHookSize/3 , 1- mixHookSize/3 ); 
+        hookPosition = Mathf.Clamp(hookPosition, mixHookSize / 3, 1 - mixHookSize / 3);
         mixHook.position = Vector3.Lerp(bottomPivot.position, topPivot.position, hookPosition);
     }
 
@@ -114,16 +116,19 @@ public class MixingMiniGame : MonoBehaviour
         if (min < potPos && potPos < max)
         {
             hookProgress += mixHookPower * Time.deltaTime; //Increase progress if pot is in hook area
+            animator.SetBool("Mixing", true);
         }
+
+
         else
         {
             hookProgress -= hookProgDegradationPower * Time.deltaTime; //Decrease if pot is outside prog area
-
-            failTimer -= Time.deltaTime;
+            animator.SetBool("Mixing", false);
+            /*failTimer -= Time.deltaTime;
             if(failTimer < 0)
             {
-
-            }
+                Lose();
+            }*/
         }
 
         if (hookProgress >= 420f)
@@ -134,15 +139,17 @@ public class MixingMiniGame : MonoBehaviour
         hookProgress = Mathf.Clamp(hookProgress, 0f, 420f);
     }
 
-    void Win()
-    {
-        Pause = true;
-        Debug.Log("Mixture done");
+        void Win()
+        {
+            Pause = true;
+            Debug.Log("Mixture done");
+        }
+
+        void Lose()
+        {
+            Pause = true;
+            Debug.Log("Mixture fail");
+        }
     }
 
-    void Lose()
-    {
-        Pause = true;
-        Debug.Log("Mixture fail");  
-    }
-}
+
