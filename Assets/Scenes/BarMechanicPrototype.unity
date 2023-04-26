@@ -611,7 +611,7 @@ MonoBehaviour:
   timerMultiplicator: 3
   smoothMotion: 1
   mixHook: {fileID: 680594385}
-  mixHookSize: 0.1
+  mixHookSize: 0.15
   mixHookPower: 5
   hookPullPower: 0.01
   hookGravPower: 0.005

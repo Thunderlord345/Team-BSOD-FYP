@@ -22,7 +22,7 @@ public class MixingMiniGame : MonoBehaviour
     [Header("MixHook")]
     [SerializeField] Transform mixHook;
     float hookPosition;
-    [SerializeField] float mixHookSize = 50f;
+    [SerializeField] float mixHookSize = 0.1f;
     [SerializeField] float mixHookPower = 5f;
     float hookProgress;
     float hookPullVelocity;
@@ -31,6 +31,9 @@ public class MixingMiniGame : MonoBehaviour
     [SerializeField] float hookProgDegradationPower = 0.1f;
 
     [SerializeField] SpriteRenderer hookSpriteRenderer;
+
+    [Header("ProgBar")]
+    [SerializeField] Transform progressBarContainer;
 
     private void Start()
     {
@@ -41,6 +44,7 @@ public class MixingMiniGame : MonoBehaviour
     {
         Pot();
         Hook();
+        ProgressCheck();
     }
 
     private void Resize()
@@ -63,7 +67,7 @@ public class MixingMiniGame : MonoBehaviour
         hookPullVelocity -= hookGravPower * Time.deltaTime; //gravity to pull hook down
 
         hookPosition += hookPullVelocity;
-        hookPosition = Mathf.Clamp(hookPosition, mixHookSize/10 , 1- mixHookSize/10 ); 
+        hookPosition = Mathf.Clamp(hookPosition, mixHookSize/3 , 1- mixHookSize/3 ); 
         mixHook.position = Vector3.Lerp(bottomPivot.position, topPivot.position, hookPosition);
     }
 
@@ -80,5 +84,26 @@ public class MixingMiniGame : MonoBehaviour
 
         potPos = Mathf.SmoothDamp(potPos, potDest, ref potSpeed, smoothMotion);
         pot.position = Vector3.Lerp(bottomPivot.position, topPivot.position, potPos); //Move the pot
+    }
+
+    void ProgressCheck()
+    {
+        Vector3 ls = progressBarContainer.localScale;
+        ls.y = hookProgress;
+        progressBarContainer.localScale = ls;
+
+        float min = hookPosition - mixHookSize / 3;
+        float max = hookPosition + mixHookSize / 3;
+
+        if(min< potPos && potPos < max)
+        {
+            hookProgress += mixHookPower * Time.deltaTime; //Increase progress if pot is in hook area
+        }
+        else
+        {
+            hookProgress -= hookProgDegradationPower * Time.deltaTime; //Decrease if pot is outside prog area
+        }
+
+        hookProgress = Mathf.Clamp(hookProgress, 0f, 1f);
     }
 }
