@@ -22,7 +22,7 @@ public class MixingMiniGame : MonoBehaviour
     [Header("MixHook")]
     [SerializeField] Transform mixHook;
     float hookPosition;
-    [SerializeField] float mixHookSize = 0.1f;
+    [SerializeField] float mixHookSize = 50f;
     [SerializeField] float mixHookPower = 5f;
     float hookProgress;
     float hookPullVelocity;
@@ -30,12 +30,27 @@ public class MixingMiniGame : MonoBehaviour
     [SerializeField] float hookGravPower = 0.005f;
     [SerializeField] float hookProgDegradationPower = 0.1f;
 
+    [SerializeField] SpriteRenderer hookSpriteRenderer;
 
+    private void Start()
+    {
+        Resize();
+    }
 
     private void Update()
     {
         Pot();
         Hook();
+    }
+
+    private void Resize()
+    {
+        Bounds b = hookSpriteRenderer.bounds;
+        float yScale = b.size.y;
+        Vector3 ls = mixHook.localScale;
+        float distance = Vector3.Distance(topPivot.position, bottomPivot.position);
+        ls.y = (distance / yScale * mixHookSize);
+        mixHook.localScale = ls;
     }
 
     void Hook()
@@ -48,7 +63,7 @@ public class MixingMiniGame : MonoBehaviour
         hookPullVelocity -= hookGravPower * Time.deltaTime; //gravity to pull hook down
 
         hookPosition += hookPullVelocity;
-        hookPosition = Mathf.Clamp(hookPosition, 0, 1);
+        hookPosition = Mathf.Clamp(hookPosition, mixHookSize/10 , 1- mixHookSize/10 ); 
         mixHook.position = Vector3.Lerp(bottomPivot.position, topPivot.position, hookPosition);
     }
 
