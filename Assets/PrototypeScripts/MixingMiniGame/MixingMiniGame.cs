@@ -22,13 +22,13 @@ public class MixingMiniGame : MonoBehaviour
     [Header("MixHook")]
     [SerializeField] Transform mixHook;
     float hookPosition;
-    [SerializeField] float mixHookSize = 0.1f;
-    [SerializeField] float mixHookPower = 5f;
+    [SerializeField] float mixHookSize = 0.15f;
+    [SerializeField] float mixHookPower = 50f;
     float hookProgress;
     float hookPullVelocity;
     [SerializeField] float hookPullPower = 0.01f;
     [SerializeField] float hookGravPower = 0.005f;
-    [SerializeField] float hookProgDegradationPower = 0.1f;
+    [SerializeField] float hookProgDegradationPower = 25f;
 
     [SerializeField] SpriteRenderer hookSpriteRenderer;
 
@@ -104,6 +104,6 @@ public class MixingMiniGame : MonoBehaviour
             hookProgress -= hookProgDegradationPower * Time.deltaTime; //Decrease if pot is outside prog area
         }
 
-        hookProgress = Mathf.Clamp(hookProgress, 0f, 1f);
+        hookProgress = Mathf.Clamp(hookProgress, 0f, 420f);
     }
 }

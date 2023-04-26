@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 14453509}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -115.21089, y: -854.1865, z: 0}
-  m_LocalScale: {x: 4.401519, y: 415.8214, z: 0.058195394}
+  m_LocalScale: {x: 4.401519, y: 420, z: 0.058195394}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 958298665}
@@ -612,11 +612,12 @@ MonoBehaviour:
   smoothMotion: 1
   mixHook: {fileID: 680594385}
   mixHookSize: 0.15
-  mixHookPower: 5
+  mixHookPower: 75
   hookPullPower: 0.01
   hookGravPower: 0.005
-  hookProgDegradationPower: 0.1
+  hookProgDegradationPower: 30
   hookSpriteRenderer: {fileID: 680594386}
+  progressBarContainer: {fileID: 14453510}
 --- !u!1 &926274795
 GameObject:
   m_ObjectHideFlags: 0
