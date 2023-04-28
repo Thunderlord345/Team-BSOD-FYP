@@ -11,6 +11,8 @@ public class ProgressBar : MonoBehaviour
     Image progressBar;
     float maxDistance;
 
+    PlayerController player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,7 @@ public class ProgressBar : MonoBehaviour
 
         progressBar.fillAmount = playerGO.transform.position.x / maxDistance;
 
+        player = FindObjectOfType<PlayerController>();
     }
 
     // Update is called once per frame
@@ -27,6 +30,11 @@ public class ProgressBar : MonoBehaviour
         if(progressBar.fillAmount < 1)
         {
             progressBar.fillAmount = playerGO.transform.position.x / maxDistance;
+        }
+
+        else if(progressBar.fillAmount == 1)
+        {
+            player.goFoward = false; //stop moving once bar full 
         }
         
     }
