@@ -12,7 +12,7 @@ public class ItemDrag : MonoBehaviour
     Vector3 mouseDragStartPos;
     Vector3 spriteDragStartPos;
 
-
+  
     private void OnMouseDown()
     {
         isDragging = true;
