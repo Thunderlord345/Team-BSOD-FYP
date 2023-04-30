@@ -12,7 +12,14 @@ public class ItemDrag : MonoBehaviour
     Vector3 mouseDragStartPos;
     Vector3 spriteDragStartPos;
 
-  
+    Rigidbody2D rb;
+    
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        
+    }
+
     private void OnMouseDown()
     {
         isDragging = true;
@@ -32,6 +39,31 @@ public class ItemDrag : MonoBehaviour
     {
         isDragging = false;
         dragEndedCallBack(this);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.tag == "Slot")
+        {
+            rb.bodyType = RigidbodyType2D.Kinematic;
+            rb.velocity = Vector3.zero;
+        }
+
+
+       
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+
+        if (other.tag == "Slot")
+        {
+            rb.bodyType = RigidbodyType2D.Dynamic;
+        }
+
+
+        
     }
 
 }

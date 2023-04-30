@@ -8,23 +8,35 @@ public class SnapController : MonoBehaviour
     public List<ItemDrag> draggableObj;
     public float snapRange = 0.5f;
 
-    Transform closestSnapPoint;
+
+    public GameObject[] draggables;
+    public GameObject[] slots;
+
+
+    Rigidbody2D[] rb;
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponents<Rigidbody2D>();
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+            draggables[i].transform.localPosition = slots[i].transform.localPosition;
+        }
+
 
         foreach (ItemDrag draggable in draggableObj)
-        {
+        { 
             draggable.dragEndedCallBack = OnDragEnded;
-            
-
         }
+
+       
     }
 
     void OnDragEnded(ItemDrag draggable)
     {
         float closestDistance = -1; //item closest to snappoint;
-        closestSnapPoint = null;
+        Transform closestSnapPoint = null;
 
         foreach(Transform snapPoint in snapPoints)
         {
