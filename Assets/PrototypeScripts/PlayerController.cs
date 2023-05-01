@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody2D rb;
+    //Rigidbody2D rb;
 
     float walkSpeed = 3f;
     public bool goFoward;
@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        //rb = GetComponent<Rigidbody2D>();
         checkpoint = FindObjectOfType<Checkpoints>();
     }
 
@@ -43,8 +43,6 @@ public class PlayerController : MonoBehaviour
             moveFoward = gameObject.transform.position;
             moveFoward.x += walkSpeed * Time.deltaTime;
             gameObject.transform.position = moveFoward;
-
-           
         }
 
        
@@ -53,7 +51,6 @@ public class PlayerController : MonoBehaviour
     public void PlayGame()
     {
         goFoward = true; //for button 
-        Debug.Log("moving");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
