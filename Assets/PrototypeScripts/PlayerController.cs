@@ -10,10 +10,13 @@ public class PlayerController : MonoBehaviour
     public bool goFoward;
     Vector2 moveFoward;
 
+    Checkpoints checkpoint;
+
     // Start is called before the first frame update
     void Start()
     {
         //rb = GetComponent<Rigidbody2D>();
+        checkpoint = FindObjectOfType<Checkpoints>();
     }
 
     // Update is called once per frame
@@ -48,5 +51,13 @@ public class PlayerController : MonoBehaviour
     public void PlayGame()
     {
         goFoward = true; //for button 
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Checkpoint")
+        {
+            //if(checkpoint.checkpoint.c1)
+        }
     }
 }
