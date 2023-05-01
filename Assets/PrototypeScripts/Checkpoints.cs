@@ -17,7 +17,7 @@ public class Checkpoints : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        switch (checkpoints)
+       /* switch (checkpoints)
         {
             case Checkpoint.c1:
                 panel.SetActive(true);
@@ -28,7 +28,7 @@ public class Checkpoints : MonoBehaviour
             case Checkpoint.c3:
                 panel.SetActive(true);
                 break;
-        }
+        }*/
     }
 
     // Update is called once per frame
@@ -41,7 +41,18 @@ public class Checkpoints : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-
+             switch (checkpoints)
+        {
+            case Checkpoint.c1:
+                panel.SetActive(true);
+                break;
+            case Checkpoint.c2:
+                panel.SetActive(true);
+                break;
+            case Checkpoint.c3:
+                panel.SetActive(true);
+                break;
+        }
         }
     }
 }
