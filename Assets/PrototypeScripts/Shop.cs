@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
+
+    int money; //money in game 
+    //Text amount;
+    
+
     // Start is called before the first frame update
     void Start()
     {
+
         
     }
 
@@ -14,5 +20,14 @@ public class Shop : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Purchase()
+    {
+        //Once pressed money reduce
+
+        //item get added into a slot 
+
+
     }
 }
