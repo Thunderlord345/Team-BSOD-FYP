@@ -10,8 +10,6 @@ public class PlayerController : MonoBehaviour
     public bool goFoward;
     Vector2 moveFoward;
 
-    public GameObject shopPanel; //for shop
-
 
     public enum Walk
     {
@@ -76,23 +74,5 @@ public class PlayerController : MonoBehaviour
     public void PlayGame()
     {
         goFoward = true; //for button 
-    }
-
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if(other.tag == "shop")
-        {
-            shopPanel.SetActive(true);
-        }
-        
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.tag == "shop")
-        {
-            shopPanel.SetActive(false);
-        }
-        
     }
 }

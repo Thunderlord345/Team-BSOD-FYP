@@ -20,11 +20,36 @@ public class StartHouse : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        shopPanel.SetActive(true);
+        if (other.tag == "Player")
+        {
+            shopPanel.SetActive(true);
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        shopPanel.SetActive(false);
+        if (other.tag == "Player")
+        {
+            shopPanel.SetActive(false);
+        }
+
     }
+
+    public void Request()
+    {
+
+    }
+
+    public void Shop()
+    {
+
+    }
+
+    public void Achi()
+    {
+
+    }
+
+
 }
