@@ -4,60 +4,75 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //Rigidbody2D rb;
+    Rigidbody2D rb;
 
     float walkSpeed = 3f;
     public bool goFoward;
     Vector2 moveFoward;
 
-    Checkpoints checkpoint;
+
+    public enum Walk
+    {
+        Manual,
+        Auto
+    }
+
+    public Walk walk;
+
+    string walkChoice;
 
     // Start is called before the first frame update
     void Start()
     {
-        //rb = GetComponent<Rigidbody2D>();
-        checkpoint = FindObjectOfType<Checkpoints>();
+        rb = GetComponent<Rigidbody2D>();
+
+        switch (walk)
+        {
+            case Walk.Manual:
+                walkChoice = "man";
+                break;
+            case Walk.Auto:
+                walkChoice = "auto";
+                break;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         //player key movement 
-        //if (Input.GetAxisRaw("Horizontal") > 0) // moving right 
-        //{
-        //    rb.velocity = new Vector2(walkSpeed, rb.velocity.y);
-
-        //}
-        //else if (Input.GetAxisRaw("Horizontal") < 0) //moving left 
-        //{
-        //    rb.velocity = new Vector2(-walkSpeed, rb.velocity.y);
-
-        //}
-        //else
-        //{
-        //    rb.velocity = new Vector2(0, rb.velocity.y); //staying still 
-        //}
-
-        if (goFoward == true)
+        if (walkChoice == "man")
         {
-            moveFoward = gameObject.transform.position;
-            moveFoward.x += walkSpeed * Time.deltaTime;
-            gameObject.transform.position = moveFoward;
+            if (Input.GetAxisRaw("Horizontal") > 0) // moving right 
+            {
+                rb.velocity = new Vector2(walkSpeed, rb.velocity.y);
+
+            }
+            else if (Input.GetAxisRaw("Horizontal") < 0) //moving left 
+            {
+                rb.velocity = new Vector2(-walkSpeed, rb.velocity.y);
+
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y); //staying still 
+            }
         }
 
+        else if(walkChoice == "auto")
+        {
+            if (goFoward == true)
+            {
+                moveFoward = gameObject.transform.position;
+                moveFoward.x += walkSpeed * Time.deltaTime;
+                gameObject.transform.position = moveFoward;
+            }
+        }
        
     }
 
     public void PlayGame()
     {
         goFoward = true; //for button 
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.tag == "Checkpoint")
-        {
-            //if(checkpoint.checkpoint.c1)
-        }
     }
 }

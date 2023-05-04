@@ -2342,6 +2342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goFoward: 0
+  walk: 1
 --- !u!61 &1099500401
 BoxCollider2D:
   m_ObjectHideFlags: 0
