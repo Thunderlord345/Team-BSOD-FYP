@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class StartHouse : MonoBehaviour
 {
-    GameObject shopPanel;
+    public GameObject Panel;
+    public GameObject shopPanel;
+    public GameObject reqPanel;
+    public GameObject rewardPanel;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -22,7 +26,7 @@ public class StartHouse : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            shopPanel.SetActive(true);
+            Panel.SetActive(true);
         }
 
     }
@@ -31,7 +35,7 @@ public class StartHouse : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            shopPanel.SetActive(false);
+            Panel.SetActive(false);
         }
 
     }
@@ -43,7 +47,7 @@ public class StartHouse : MonoBehaviour
 
     public void Shop()
     {
-
+        shopPanel.SetActive(true);
     }
 
     public void Achi()
