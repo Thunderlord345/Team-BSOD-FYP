@@ -53,7 +53,7 @@ public class StartHouse : MonoBehaviour
 
     public void Achi()
     {
-
+        rewardPanel.SetActive(true);
     }
 
     public void Back()
