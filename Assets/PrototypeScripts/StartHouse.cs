@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StartHouse : MonoBehaviour
 {
@@ -42,7 +43,7 @@ public class StartHouse : MonoBehaviour
 
     public void Request()
     {
-
+        reqPanel.SetActive(true);
     }
 
     public void Shop()
@@ -53,6 +54,12 @@ public class StartHouse : MonoBehaviour
     public void Achi()
     {
 
+    }
+
+    public void Back()
+    {
+        //close the current tab 
+        GameObject.Find("Back").GetComponent<Button>().transform.parent.gameObject.SetActive(false);
     }
 
 
