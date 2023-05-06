@@ -41,4 +41,10 @@ public class Shop : MonoBehaviour
     {
         moneyUI.text = "$" + money.ToString();
     }
+
+    public void Back()
+    {
+        //close the current tab 
+        GameObject.Find("Back").GetComponent<Button>().transform.parent.gameObject.SetActive(false);
+    }
 }
