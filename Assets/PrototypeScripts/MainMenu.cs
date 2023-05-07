@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject panel;
+    public GameObject bfr;
+    public GameObject aft;
+    bool change = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +18,21 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(change == false)
+        {
+            bfr.SetActive(true);
+            aft.SetActive(false);
+        }
+
+        else
+        {
+            aft.SetActive(true);
+            bfr.SetActive(false);
+        }
     }
 
-    public void Back()
+    public void ChangePic()
     {
-
+        change = !change;
     }
 }

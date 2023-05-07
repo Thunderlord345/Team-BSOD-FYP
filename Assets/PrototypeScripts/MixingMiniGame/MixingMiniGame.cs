@@ -7,6 +7,7 @@ public class MixingMiniGame : MonoBehaviour
 
     bool Pause = false;
     public Animator animator;
+    public GameObject transPanel;
 
     [Header("Pot")]
     [SerializeField] Transform topPivot;
@@ -133,15 +134,17 @@ public class MixingMiniGame : MonoBehaviour
 
         if (hookProgress >= 420f)
         {
-            Win();
+            StartCoroutine(Win());
         }
 
         hookProgress = Mathf.Clamp(hookProgress, 0f, 420f);
     }
 
-        void Win()
+        IEnumerator Win()
         {
             Pause = true;
+        yield return new WaitForSeconds(1.5f);
+        transPanel.SetActive(true);
             Debug.Log("Mixture done");
         }
 

@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
 
     string walkChoice;
 
+    public GameObject transPanel;
+
     // Start is called before the first frame update
     void Start()
     {
