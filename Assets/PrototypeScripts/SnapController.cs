@@ -13,11 +13,11 @@ public class SnapController : MonoBehaviour
     public GameObject[] slots;
 
 
-    //Rigidbody2D[] rb;
+    Rigidbody2D[] rb;
     // Start is called before the first frame update
     void Start()
     {
-       /// rb = GetComponents<Rigidbody2D>();
+        rb = GetComponents<Rigidbody2D>();
 
         for (int i = 0; i < slots.Length; i++)
         {

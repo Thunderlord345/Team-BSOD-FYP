@@ -12,18 +12,17 @@ public class ItemDrag : MonoBehaviour
     Vector3 mouseDragStartPos;
     Vector3 spriteDragStartPos;
 
-    //Rigidbody2D rb;
+    Rigidbody2D rb;
     
     private void Start()
     {
-        //rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         
     }
 
     private void OnMouseDown()
     {
         isDragging = true;
-        print("Dragging true");
         mouseDragStartPos = Camera.main.ScreenToWorldPoint(Input.mousePosition); //get mouse position in camera 
         spriteDragStartPos = transform.localPosition;
     }
@@ -33,7 +32,6 @@ public class ItemDrag : MonoBehaviour
         if (isDragging)
         {
             transform.localPosition = spriteDragStartPos + (Camera.main.ScreenToWorldPoint(Input.mousePosition) - mouseDragStartPos);
-            print("Dragging");
         }
     }
 
@@ -46,11 +44,11 @@ public class ItemDrag : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-        /*if (other.tag == "Slot")
+        if (other.tag == "Slot")
         {
             rb.bodyType = RigidbodyType2D.Kinematic;
             rb.velocity = Vector3.zero;
-        }*/
+        }
 
 
        
@@ -59,10 +57,10 @@ public class ItemDrag : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
 
-        /*if (other.tag == "Slot")
+        if (other.tag == "Slot")
         {
             rb.bodyType = RigidbodyType2D.Dynamic;
-        }*/
+        }
 
 
         
