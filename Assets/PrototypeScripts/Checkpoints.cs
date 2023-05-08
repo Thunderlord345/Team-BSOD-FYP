@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Checkpoints : MonoBehaviour
 {
+    PlayerController player;
     public enum Checkpoint
     {
         c1,
@@ -19,7 +20,7 @@ public class Checkpoints : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = FindObjectOfType<PlayerController>();
     }
 
     // Update is called once per frame
@@ -35,14 +36,14 @@ public class Checkpoints : MonoBehaviour
             print("openingPanel");
             isTriggered = true;
             panel.SetActive(true);
-            Time.timeScale = 0;
+            player.goFoward = false;
         }
     }
 
     public void Back()
     {
         panel.SetActive(false); //for button to deactivate
-        Time.timeScale = 1;
+        player.goFoward = true;
 
     }
 }
