@@ -8,5 +8,9 @@ public class ItemSlotCanvas : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("OnDrop");
+        //Snapping
+        GameObject dropped = eventData.pointerDrag;
+        DragDropCanvas draggableItem = dropped.GetComponent<DragDropCanvas>();
+        draggableItem.parentAfterDrag = transform;
     }
 }
