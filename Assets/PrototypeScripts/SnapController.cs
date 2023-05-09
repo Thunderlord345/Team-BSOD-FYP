@@ -56,16 +56,5 @@ public class SnapController : MonoBehaviour
         {
             draggable.transform.localPosition = closestSnapPoint.localPosition;
         }
-
-        //resetting it if doesnt snap 
-        else
-        {
-
-            //for (int i = 0; i < slots.Length; i++)
-            //{
-            //    draggables[i].transform.localPosition = slots[i].transform.localPosition;
-            //}
-
-        }
     }
 }
