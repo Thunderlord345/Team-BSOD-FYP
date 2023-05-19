@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1012571572423267199}
   - component: {fileID: 1012571572423267195}
   - component: {fileID: 2493272453534583141}
-  - component: {fileID: -49443815061573341}
+  - component: {fileID: 2168334128724908961}
   m_Layer: 4
   m_Name: Water Drop
   m_TagString: Untagged
@@ -118,7 +118,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: 2109c255d730373499859ab9286f2f22, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -142,7 +142,7 @@ MonoBehaviour:
   maxX: 0
   minY: 0
   maxY: 0
---- !u!114 &-49443815061573341
+--- !u!114 &2168334128724908961
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,4 +154,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e70efdfd1f3620f418ecd21c5e92d06c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixColors: 1
+  mixColors: 0

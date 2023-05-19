@@ -11,12 +11,21 @@ namespace AzeriloNamespace
 
     public class DropColorMixer : MonoBehaviour
     {
+       
+        
+
         Color dropColor;               // It is the current drop color
-        public bool mixColors = true;  // If this is set to true then the colors mix together
+        public bool mixColors = false;  // If this is set to true then the colors mix together
 
         void Start()
         {
+           
              dropColor = GetComponent<Renderer>().material.GetColor("_Drop_Color");
+        }
+
+        public void Mix()
+        {
+            mixColors = true;
         }
 
         // When the drops collide, their colors mix together

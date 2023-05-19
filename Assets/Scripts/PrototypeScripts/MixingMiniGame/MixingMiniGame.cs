@@ -6,7 +6,7 @@ public class MixingMiniGame : MonoBehaviour
 {
 
     bool Pause = false;
-    
+   
 
     [Header("Pot")]
     [SerializeField] Transform topPivot;
@@ -123,7 +123,7 @@ public class MixingMiniGame : MonoBehaviour
         else
         {
             hookProgress -= hookProgDegradationPower * Time.deltaTime; //Decrease if pot is outside prog area
-           
+            
             /*failTimer -= Time.deltaTime;
             if(failTimer < 0)
             {
@@ -133,13 +133,13 @@ public class MixingMiniGame : MonoBehaviour
 
         if (hookProgress >= 420f)
         {
-            StartCoroutine(Win());
+            //StartCoroutine(Win());
         }
 
         hookProgress = Mathf.Clamp(hookProgress, 0f, 420f);
     }
 
-        IEnumerator Win()
+        /*IEnumerator Win()
         {
             Pause = true;
         yield return new WaitForSeconds(1.5f);
@@ -151,7 +151,7 @@ public class MixingMiniGame : MonoBehaviour
         {
             Pause = true;
             Debug.Log("Mixture fail");
-        }
+        }*/
     }
 
 
