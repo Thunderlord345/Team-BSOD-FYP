@@ -6,8 +6,7 @@ public class MixingMiniGame : MonoBehaviour
 {
 
     bool Pause = false;
-    public Animator animator;
-    public GameObject transPanel;
+    
 
     [Header("Pot")]
     [SerializeField] Transform topPivot;
@@ -44,7 +43,7 @@ public class MixingMiniGame : MonoBehaviour
 
     private void Start()
     {
-        animator = FindObjectOfType<Animator>();
+       
         Resize();
     }
 
@@ -117,14 +116,14 @@ public class MixingMiniGame : MonoBehaviour
         if (min < potPos && potPos < max)
         {
             hookProgress += mixHookPower * Time.deltaTime; //Increase progress if pot is in hook area
-            animator.SetBool("Mixing", true);
+            
         }
 
 
         else
         {
             hookProgress -= hookProgDegradationPower * Time.deltaTime; //Decrease if pot is outside prog area
-            animator.SetBool("Mixing", false);
+           
             /*failTimer -= Time.deltaTime;
             if(failTimer < 0)
             {
@@ -144,7 +143,7 @@ public class MixingMiniGame : MonoBehaviour
         {
             Pause = true;
         yield return new WaitForSeconds(1.5f);
-        transPanel.SetActive(true);
+        
             Debug.Log("Mixture done");
         }
 
