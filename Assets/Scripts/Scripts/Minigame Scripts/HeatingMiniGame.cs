@@ -10,17 +10,23 @@ public class HeatingMiniGame : MonoBehaviour
     [SerializeField] Transform meter;
     float meterSpeed;
     //float heatingDuration = 3f;
-    float heatingPull = 0.001f;
-    float heatingGrav = 0.0005f;
+    [SerializeField] float heatingPull = 0.001f;
+    [SerializeField] float heatingGrav = 0.0005f;
     float meterPos;
 
+    float meterPower;
     float meterSize;
-    
+    float heatingProgress;
+    [SerializeField] Transform progContainer;
 
+    HeaterTrigger ht;
+
+
+    float meterProg;
     // Start is called before the first frame update
     void Start()
     {
-        
+        ht = FindObjectOfType<HeaterTrigger>();
     }
 
     // Update is called once per frame
@@ -52,4 +58,20 @@ public class HeatingMiniGame : MonoBehaviour
         meterPos = Mathf.Clamp(meterPos, 0, 1);
         meter.position = Vector3.Lerp(botPivot.position, topPivot.position,meterPos );
     }
+
+    void ProgCheck()
+    {
+        Vector3 ls = progContainer.localScale;
+        ls.z = heatingProgress;
+        progContainer.localScale = ls;
+
+        if (ht.white)
+        {
+
+        }
+    }
+
+    
+
+   
 }
