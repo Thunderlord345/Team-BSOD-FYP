@@ -33,7 +33,7 @@ public class HeaterTrigger : MonoBehaviour
         }
         else if (other.tag == "Red")
         {
-            yellow = true;
+            red = true;
             white = orange = green = yellow = false;
             print("Red");
         }

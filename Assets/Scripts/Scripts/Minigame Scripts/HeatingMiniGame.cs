@@ -15,6 +15,7 @@ public class HeatingMiniGame : MonoBehaviour
     float meterPos;
 
     float meterPower;
+    float meterDegradation;
     float meterSize;
     float heatingProgress;
     [SerializeField] Transform progContainer;
@@ -32,10 +33,11 @@ public class HeatingMiniGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Cook();
+        Meter();
+        ProgCheck();
     }
 
-    void Cook()
+    void Meter()
     {
         if (Input.GetMouseButton(0))
         {
@@ -62,13 +64,32 @@ public class HeatingMiniGame : MonoBehaviour
     void ProgCheck()
     {
         Vector3 ls = progContainer.localScale;
-        ls.z = heatingProgress;
+        ls.x = heatingProgress;
         progContainer.localScale = ls;
 
         if (ht.white)
         {
-
+            meterPower = 0.01f;
+            heatingProgress += meterPower * Time.deltaTime;
+            
+        } else if (ht.yellow)
+        {
+            meterPower = 0.012f;
+            heatingProgress += meterPower * Time.deltaTime;
+        } else if (ht.orange)
+        {
+            meterPower = 0.015f;
+            heatingProgress += meterPower * Time.deltaTime;
+        }else if (ht.green)
+        {
+            meterPower = 0.05f;
+            heatingProgress += meterPower * Time.deltaTime;
+        } else if (ht.red)
+        {
+            meterDegradation = 0.07f;
+            heatingProgress -= meterDegradation * Time.deltaTime;
         }
+        heatingProgress = Mathf.Clamp(heatingProgress, 0f, 1f);
     }
 
     
