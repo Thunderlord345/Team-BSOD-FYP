@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdbec60d4dc622c48a5628a4e72f3079, type: 3}
-  m_Name: Items
+  m_Name: AA
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  name: 
-  description: 
+  name: Crystalide
+  description: Brightening
   cost: 0
