@@ -6,6 +6,11 @@ TagManager:
   tags:
   - End
   - Slot
+  - White
+  - Yellow
+  - Orange
+  - Green
+  - Red
   layers:
   - Default
   - TransparentFX
