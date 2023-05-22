@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 5
   image: {fileID: 0}
-  name: PhytAura
-  description: Phytessence french oak
+  name: Phytessence french oak
+  description: Anti-Ageing
