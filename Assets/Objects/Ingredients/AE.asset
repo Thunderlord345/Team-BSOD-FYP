@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 4
   image: {fileID: 0}
-  name: Matrixyl 3000
+  _name: Matrixyl 3000
   description: Anti-ageing

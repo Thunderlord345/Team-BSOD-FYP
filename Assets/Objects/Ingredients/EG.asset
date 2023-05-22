@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1322d23bbea444cafaf0921fde695c, type: 3}
   m_Name: EG
   m_EditorClassIdentifier: 
-  type: 5
+  type: 6
   image: {fileID: 0}
-  name: Phytessence Pink Pomelo
+  _name: "Phytessence\u2122 Pink pomelo EC"
   description: Brightening

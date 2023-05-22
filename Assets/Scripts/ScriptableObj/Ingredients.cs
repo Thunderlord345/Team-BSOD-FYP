@@ -13,6 +13,6 @@ public class Ingredients : ScriptableObject
 
     public Type type;
     public Sprite image;
-    public string name;
+    public string _name;
     public string description;
 }

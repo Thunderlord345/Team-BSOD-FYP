@@ -12,7 +12,7 @@ public class Items : ScriptableObject
 
     public Item item; //so things can refer to this
     public Sprite image;
-    public string name;
+    public string _name;
     public string description;
     public int cost;
 }

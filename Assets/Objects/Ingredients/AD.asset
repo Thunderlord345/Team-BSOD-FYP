@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   image: {fileID: 0}
-  name: Aqualance
+  _name: Aqualance
   description: Moisturising

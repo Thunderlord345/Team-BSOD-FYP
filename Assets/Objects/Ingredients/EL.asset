@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1322d23bbea444cafaf0921fde695c, type: 3}
   m_Name: EL
   m_EditorClassIdentifier: 
-  type: 5
+  type: 11
   image: {fileID: 0}
-  name: Phytessence french oak
+  _name: Phytessence french oak
   description: Anti-Ageing
