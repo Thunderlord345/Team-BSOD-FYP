@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdbec60d4dc622c48a5628a4e72f3079, type: 3}
-  m_Name: Items
+  m_Script: {fileID: 11500000, guid: aa1322d23bbea444cafaf0921fde695c, type: 3}
+  m_Name: EL
   m_EditorClassIdentifier: 
+  type: 11
   image: {fileID: 0}
-  name: 
-  description: 
-  cost: 0
+  _name: Phytessence french oak
+  description: Anti-Ageing
