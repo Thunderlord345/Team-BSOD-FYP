@@ -30,7 +30,7 @@ public class InventoryManager : MonoBehaviour
     {
         foreach(var ingredient in Ingredients)
         {
-            //spawning another slot in the "Content"
+            //spawning another slot in the "content"
             GameObject obj = Instantiate(InventoryIngredient, IngredientContent);
             var ingredientName = obj.transform.Find("ItemName").GetComponent<TextMeshProUGUI>();
             var ingredientIcon = obj.transform.Find("ItemImage").GetComponent<Image>();
