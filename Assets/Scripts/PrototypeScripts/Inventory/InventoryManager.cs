@@ -28,6 +28,12 @@ public class InventoryManager : MonoBehaviour
 
     public void ListIngre()
     {
+        //clearing content before opening
+        foreach(Transform ingredient in IngredientContent)
+        {
+            Destroy(ingredient.gameObject);
+        }
+
         foreach(var ingredient in Ingredients)
         {
             //spawning another slot in the "content"
