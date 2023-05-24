@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -29,8 +30,9 @@ public class InventoryManager : MonoBehaviour
     {
         foreach(var ingredient in Ingredients)
         {
+            //spawning another slot in the "Content"
             GameObject obj = Instantiate(InventoryIngredient, IngredientContent);
-            var ingredientName = obj.transform.Find("ItemName").GetComponent<Text>();
+            var ingredientName = obj.transform.Find("ItemName").GetComponent<TextMeshProUGUI>();
             var ingredientIcon = obj.transform.Find("ItemImage").GetComponent<Image>();
 
             ingredientName.text = ingredient._name;
