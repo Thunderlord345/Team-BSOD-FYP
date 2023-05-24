@@ -19,8 +19,8 @@ public class IngredientData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _name.text = itemName;
-        image.sprite = itemImage;
+        //_name.text = itemName;
+        //image.sprite = itemImage;
         print(itemName);
         print(itemDesc);
     }
