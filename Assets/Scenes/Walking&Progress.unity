@@ -2912,11 +2912,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4293003191930016613, guid: b2bce5db1c873ce4180f7153bb46bbe1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 21.2003
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 4293003191930016613, guid: b2bce5db1c873ce4180f7153bb46bbe1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 25.817999
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 4293003191930016613, guid: b2bce5db1c873ce4180f7153bb46bbe1, type: 3}
       propertyPath: m_LocalScale.z
@@ -2928,7 +2928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4293003191930016613, guid: b2bce5db1c873ce4180f7153bb46bbe1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.3845
+      value: 3.07
       objectReference: {fileID: 0}
     - target: {fileID: 4293003191930016613, guid: b2bce5db1c873ce4180f7153bb46bbe1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2967,6 +2967,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4293003191930016615, guid: b2bce5db1c873ce4180f7153bb46bbe1, type: 3}
+      propertyPath: m_Size.x
+      value: 0.07311513
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293003191930016615, guid: b2bce5db1c873ce4180f7153bb46bbe1, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0014237948
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293003191930016615, guid: b2bce5db1c873ce4180f7153bb46bbe1, type: 3}
       propertyPath: m_SpriteTilingProperty.border.w
       value: 0
       objectReference: {fileID: 0}
@@ -2997,6 +3005,14 @@ PrefabInstance:
     - target: {fileID: 4293003191930016632, guid: b2bce5db1c873ce4180f7153bb46bbe1, type: 3}
       propertyPath: transPanel
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293003191930016633, guid: b2bce5db1c873ce4180f7153bb46bbe1, type: 3}
+      propertyPath: m_Size.x
+      value: 0.084064305
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293003191930016633, guid: b2bce5db1c873ce4180f7153bb46bbe1, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0009492021
       objectReference: {fileID: 0}
     - target: {fileID: 4293003191930016633, guid: b2bce5db1c873ce4180f7153bb46bbe1, type: 3}
       propertyPath: m_SpriteTilingProperty.border.w
