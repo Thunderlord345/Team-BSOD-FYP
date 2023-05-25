@@ -10,7 +10,7 @@ public class HeatingMiniGame : MonoBehaviour
     [SerializeField] Transform meter;
     float meterSpeed;
     //float heatingDuration = 3f;
-    [SerializeField] float heatingPull = 0.0005f;
+    [SerializeField] float heatingPull = 0.001f;
     [SerializeField] float heatingGrav = 0.0005f;
     float meterPos;
 
@@ -39,12 +39,13 @@ public class HeatingMiniGame : MonoBehaviour
 
     void Meter()
     {
-        //if (Input.GetMouseButton(0))
-        //{
-        meterSpeed += heatingPull * Time.deltaTime;
-        print("Pulling");
+        if (Input.GetMouseButton(0))
+        {
+            meterSpeed += heatingPull * Time.deltaTime;
+            print("Pulling");
+            
+        }
         meterPos += meterSpeed;
-       // }
         meterSpeed -= heatingGrav * Time.deltaTime;
         
 
@@ -73,8 +74,8 @@ public class HeatingMiniGame : MonoBehaviour
 
         if (ht.white)
         {
-            meterPower = 0.01f;
-            heatingProgress += meterPower * Time.deltaTime;
+            meterDegradation = 0.06f;
+            heatingProgress -= meterDegradation * Time.deltaTime;
             
         } else if (ht.yellow)
         {

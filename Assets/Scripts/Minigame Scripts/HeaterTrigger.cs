@@ -5,7 +5,13 @@ using UnityEngine;
 public class HeaterTrigger : MonoBehaviour
 {
     public bool white, yellow, orange, green, red;
+    Rigidbody2D rb;
     // Start is called before the first frame update
+
+    private void Start()
+    {
+     
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "White")
@@ -38,4 +44,6 @@ public class HeaterTrigger : MonoBehaviour
             print("Red");
         }
     }
+
+ 
 }
