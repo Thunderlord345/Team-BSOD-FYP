@@ -10,8 +10,8 @@ public class HeatingMiniGame : MonoBehaviour
     [SerializeField] Transform meter;
     float meterSpeed;
     //float heatingDuration = 3f;
-    [SerializeField] float heatingPull = 0.05f;
-    [SerializeField] float heatingGrav = 0.005f;
+    [SerializeField] float heatingPull = 0.001f;
+    [SerializeField] float heatingGrav = 0.0005f;
     float meterPos;
 
     float meterPower;
