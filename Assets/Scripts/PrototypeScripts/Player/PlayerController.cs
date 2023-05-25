@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public bool goFoward;
     Vector2 moveFoward;
 
+    bool isTriggered = false;
+
 
     public enum Walk
     {
@@ -23,10 +25,14 @@ public class PlayerController : MonoBehaviour
 
     public GameObject transPanel;
 
+    EventManager eventManager;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        eventManager = FindObjectOfType<EventManager>();
 
         switch (walk)
         {
@@ -76,5 +82,16 @@ public class PlayerController : MonoBehaviour
     public void PlayGame()
     {
         goFoward = true; //for button 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Spawn")
+        {
+
+            print("spawning it ");
+            eventManager.ingreSpawn.Invoke();
+            Destroy(collision.gameObject.GetComponent<BoxCollider2D>());
+        }
     }
 }

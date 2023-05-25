@@ -6,7 +6,7 @@ public class DialogueBox : MonoBehaviour
 {
 
     public GameObject inventoryPanel;
-    bool isOpen = false;
+    bool isOpen = true;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +23,8 @@ public class DialogueBox : MonoBehaviour
     public void OpenBackpack()
     {
         isOpen = !isOpen;
+
+        //print(isOpen);
 
         if (!isOpen)
         {

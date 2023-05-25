@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: AA
   m_EditorClassIdentifier: 
   type: 0
-  image: {fileID: 21300000, guid: 50dc59d0d71152a4d81be44459e76e42, type: 3}
+  image: {fileID: 21300000, guid: e4cfc61671842bb4d93f7e1f1eae4f60, type: 3}
   _name: Crystalide
   description: Brightening
