@@ -6,18 +6,16 @@ using UnityEngine.Events;
 public class EventManager : MonoBehaviour
 {
 
-    public Event ingreSpawn;
-    public Event weatherSpawn;
+    public UnityEvent ingreSpawn;
+    public GameObject ingre; //spawning this 
+    public Transform spawn; //location 
+    //public Event weatherSpawn;
 
-    // Start is called before the first frame update
-    void Start()
+
+    public void SpawnIngre()
     {
-        
+        Instantiate(ingre, spawn);
+        print("spawn");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

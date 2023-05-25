@@ -11,6 +11,8 @@ TagManager:
   - Orange
   - Green
   - Red
+  - Ingredient
+  - Spawn
   layers:
   - Default
   - TransparentFX
