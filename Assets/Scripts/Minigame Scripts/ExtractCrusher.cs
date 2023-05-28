@@ -10,8 +10,11 @@ public class ExtractCrusher : MonoBehaviour
     public List<Button> buttons; //List of buttons
     public List<Button> shuffledButtons; //List of shuffled buttons
     int counter = 0; //tracks how many buttons pressed in sequence
+    public GameObject gamePanel;
+    ProgressBarUI pg;
     public void Start()
     {
+        pg = FindObjectOfType<ProgressBarUI>();
         RestartGame();
     }
     public void RestartGame()
@@ -30,11 +33,14 @@ public class ExtractCrusher : MonoBehaviour
         if (int.Parse(button.GetComponentInChildren<TextMeshProUGUI>().text) - 1 == counter) //Check if number of buttons -1 is equal to counter, to know the button is pressed
         {
             counter++;
+            pg.current = pg.current + 10;
             button.interactable = false;
             button.image.color = Color.green;
             if (counter == 10) //Check if all buttons are already pressed
             {
                 RestartGame();
+                
+                gamePanel.SetActive(false);
             }
         }
     }
