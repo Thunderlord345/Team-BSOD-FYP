@@ -87,8 +87,8 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.tag == "Spawn")
         {
-            print("spawning event");
             eventManager.ingreSpawn.Invoke();
+            print("spawning event");
             Destroy(collision.gameObject.GetComponent<BoxCollider2D>());
         }
     }

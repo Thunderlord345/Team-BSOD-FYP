@@ -12,60 +12,38 @@ public class EventManager : MonoBehaviour
     public Transform[] spawn; //location 
     //public Event weatherSpawn;
 
+    int spawnIndex = 0;
+
     public void SpawnIngre()
     {
-        for(int i = 0; i < ingre.Length; i++)
+
+
+        int randomObjectIndex = Random.Range(0, ingre.Length); //pick a random obj in the list 
+        
+        if(spawnIndex >= ingre.Length || spawnIndex >= spawn.Length)
         {
-
-            //Transform spawnPoint = spawn[i];
-            int randomObjectIndex = Random.Range(0, ingre.Length);
-            //int randomSpawnIndex = Random.Range(0, spawn.Length);
-
-            GameObject ingreSpawn = Instantiate(ingre[randomObjectIndex], spawn[randomObjectIndex].position, Quaternion.identity);
-            ingreSpawn.transform.position = spawn[randomObjectIndex].position;
-
-            RemoveSpawnPoint(randomObjectIndex);
-            RemoveObject(randomObjectIndex);
-
-
+            spawnIndex = 0; //making sure it does not exceed the available spawn or obj
         }
-        //foreach(GameObject obj in ingre)
-        //{
-        //    Instantiate(obj, spawn);
-        //}
-        //Instantiate(ingre, spawn);
-        print("spawn");
+
+        GameObject ingreSpawn = Instantiate(ingre[randomObjectIndex], spawn[spawnIndex].position, Quaternion.identity);
+        print(ingreSpawn);
+        ingreSpawn.transform.position = spawn[spawnIndex].position;
+
+        RemoveSpawnPoint(spawnIndex);
+        RemoveObject(randomObjectIndex);
     }
 
     void RemoveSpawnPoint(int index)
     {
-        Transform[] newSpawn = new Transform[spawn.Length - 1];
-
-        for(int i = 0, j = 0; i < spawn.Length; i++)
-        {
-            if(i != index)
-            {
-                newSpawn[j] = spawn[i];
-                j++;
-            }
-        }
-
-        spawn = newSpawn;
+        var newSpawn = new List<Transform>(spawn);
+        newSpawn.RemoveAt(index);
+        spawn = newSpawn.ToArray();
     }
 
     void RemoveObject(int index)
     {
-        GameObject[] newIngre = new GameObject[ingre.Length - 1];
-
-        for (int i = 0, j = 0; i < ingre.Length; i++)
-        {
-            if (i != index)
-            {
-                newIngre[j] = ingre[i];
-                j++;
-            }
-        }
-
-        ingre = newIngre;
+        var newIngre = new List<GameObject>(ingre);
+        newIngre.RemoveAt(index);
+        ingre = newIngre.ToArray();
     }
 }
