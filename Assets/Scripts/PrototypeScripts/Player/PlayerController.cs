@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     public bool goFoward;
     Vector2 moveFoward;
 
-    bool isTriggered = false;
 
 
     public enum Walk
@@ -88,9 +87,8 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.tag == "Spawn")
         {
-
-            print("spawning it ");
             eventManager.ingreSpawn.Invoke();
+            print("spawning event");
             Destroy(collision.gameObject.GetComponent<BoxCollider2D>());
         }
     }
