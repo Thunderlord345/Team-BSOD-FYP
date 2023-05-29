@@ -44,7 +44,7 @@ public class MixingMiniGame : MonoBehaviour
     private void Start()
     {
        
-        Resize();
+        //Resize();
     }
 
     private void Update()

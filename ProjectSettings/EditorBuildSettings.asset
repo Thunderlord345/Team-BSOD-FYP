@@ -11,10 +11,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/LevelSelect.unity
     guid: eda7f00d273baad41abe7fa66b0df4f0
-  - enabled: 1
-    path: Assets/Scenes/Walking&Progress.unity
+  - enabled: 0
+    path: Assets/Scenes/LevelDesign.unity
     guid: a026c467b1ee92347b93da8a6fc985d9
   - enabled: 0
     path: Assets/Scenes/Shop&Lvl.unity
     guid: 98e4cc4893b4b5a4cbbc6bfdb1172764
+  - enabled: 1
+    path: Assets/Scenes/Minigames.unity
+    guid: d467d605fc1ecb2408d6eed846eb3b8b
   m_configObjects: {}
