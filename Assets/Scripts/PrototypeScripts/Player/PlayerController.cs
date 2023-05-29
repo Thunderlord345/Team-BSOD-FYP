@@ -24,14 +24,14 @@ public class PlayerController : MonoBehaviour
 
     public GameObject transPanel;
 
-    EventManager eventManager;
+    SpawnManager eventManager;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        eventManager = FindObjectOfType<EventManager>();
+        eventManager = FindObjectOfType<SpawnManager>();
 
         switch (walk)
         {
