@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelSelect.unity
     guid: eda7f00d273baad41abe7fa66b0df4f0
   - enabled: 0
-    path: Assets/Scenes/Walking&Progress.unity
+    path: Assets/Scenes/LevelDesign.unity
     guid: a026c467b1ee92347b93da8a6fc985d9
   - enabled: 0
     path: Assets/Scenes/Shop&Lvl.unity
