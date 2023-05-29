@@ -40,7 +40,7 @@ public class ExtractCrusher : MonoBehaviour
             {
                 RestartGame();
                 
-                gamePanel.SetActive(false);
+                //gamePanel.SetActive(false);
             }
         }
     }
